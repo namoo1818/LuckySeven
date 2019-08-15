@@ -1,0 +1,1 @@
+﻿public enum BulletType { Bullet, Missile, Laser }

@@ -37,7 +37,7 @@ public class Moving : MonoBehaviour
             animator.SetBool("isWalking", true);
         }
 
-        if (Input.GetAxisRaw("Vertical") ==1 && rigid.velocity.y == 0)
+        if (Input.GetAxisRaw("Vertical") == 1 && rigid.velocity.y == 0)
         {
             isJumping = true;
         }
@@ -62,7 +62,7 @@ public class Moving : MonoBehaviour
             moveVelocity = Vector3.right;
         }
         
-        transform.position += moveVelocity * movePower * Time.deltaTime;
+        transform.position += moveVelocity * movePower * Time.fixedDeltaTime;
     }
 
     void Jump()
