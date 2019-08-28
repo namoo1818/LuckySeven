@@ -21,6 +21,11 @@ public class Timer : MonoBehaviour
     {
         LimitTime -= Time.deltaTime;
         text_Timer.text = "TIME: " + Mathf.Round(LimitTime);
-
+        if(LimitTime<=0)
+        {
+            Debug.LogError("게임오버");
+            GameObject.Find("Canvas").transform.Find("GameOverPanel").gameObject.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }
